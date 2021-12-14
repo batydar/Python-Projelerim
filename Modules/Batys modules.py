@@ -1,25 +1,28 @@
 import time as zaman
-import random
 import string
+import random
 
-def passwordgenerator(harfsayi, rakamsayi):
-    şifrestr=""
-    şifre=[]
-    harflist=list(string.ascii_lowercase)
-    for i in range(0, harfsayi):
-        birharf=random.choice(harflist)
-        şifre.append(birharf)
-    for i in range(0, rakamsayi):
-        birsayi=random.randint(0,9)
-        şifre.append(str(birsayi))
-    
-    for i in range(0, rakamsayi+harfsayi):
-        rastgelehane=random.choice(şifre)   
-        şifrestr=şifrestr+rastgelehane
-        şifre.remove(rastgelehane)
-    
+def passwordgenerator(harfsayi, rakamsayi, kaçşifre):
+    şifreler=[]
+    for a in range(0, kaçşifre):
+        şifre=[]
+        şifrestr=""
+        harflist=list(string.ascii_lowercase)
+        for i in range(0, harfsayi):
+            birharf=random.choice(harflist)
+            şifre.append(birharf)
+        for i in range(0, rakamsayi):
+            birsayi=random.randint(0,9)
+            şifre.append(str(birsayi))
+        
+        for i in range(0, rakamsayi+harfsayi):
+            rastgelehane=random.choice(şifre)   
+            şifrestr=şifrestr+rastgelehane
+            şifre.remove(rastgelehane)
+        
+        şifreler.append(şifrestr)
 
-    return şifrestr
+    return şifreler
 
 
 
