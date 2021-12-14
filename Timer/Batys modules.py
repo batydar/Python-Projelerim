@@ -1,4 +1,30 @@
 import time as zaman
+import random
+import string
+
+def passwordgenerator():
+    şifrestr=""
+    şifre=[]
+    harflist=list(string.ascii_lowercase)
+    user_input=int(input("Şifrede bulunmasını istediğiniz harf sayısı\n"))
+    user_input1=int(input("Şifrede bulunmasını istediğiniz rakam sayısı\n"))
+    for i in range(0, user_input):
+        birharf=random.choice(harflist)
+        şifre.append(birharf)
+    for i in range(0, user_input1):
+        birsayi=random.randint(0,9)
+        şifre.append(str(birsayi))
+    
+    for i in range(0, user_input+user_input1):
+        rastgelehane=random.choice(şifre)   
+        şifrestr=şifrestr+rastgelehane
+        şifre.remove(rastgelehane)
+    
+
+    print(şifrestr)
+
+
+
 def sayac(time):
     x=time
     second=time
