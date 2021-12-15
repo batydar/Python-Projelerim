@@ -2,6 +2,27 @@ import time as zaman
 import string
 import random
 
+def zarat(kaçyüzüvar, atış, tekrarlama):
+    toplamort=0
+    for a in range(0,tekrarlama):    
+        yüzlistesi=[]
+        toplam=0
+        for i in range(0, atış):
+            yüzlistesi.append(random.randint(1,kaçyüzüvar))
+        
+        for i in range(0, atış):
+            """print("Atış {} sayı: {}".format(i+1, yüzlistesi[i]))"""
+            toplam+=yüzlistesi[i]
+        
+        if kaçyüzüvar==6:
+            ortdeger=toplam/atış
+            toplamort+=ortdeger
+            print("Ortalama = {} atış = {}".format(ortdeger,a+1))
+            
+    print("Ortalama = {}".format(toplamort/tekrarlama))
+
+    
+    
 def passwordgenerator(harfsayi, rakamsayi, kaçşifre):
     şifreler=[]
     for a in range(0, kaçşifre):
