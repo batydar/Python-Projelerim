@@ -1,6 +1,10 @@
 import time as zaman
 import string
 import random
+import pyfiglet
+
+batydar = pyfiglet.figlet_format("batydar")
+print(batydar)
 
 def zarat(kaçyüzüvar, atış, tekrarlama):
     toplamort=0
